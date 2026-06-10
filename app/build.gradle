@@ -1,0 +1,38 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    compileSdk 34
+    namespace 'com.vulndroid.app'
+
+    defaultConfig {
+        applicationId "com.vulndroid.app"
+        minSdk 24
+        targetSdk 34
+        versionCode 1
+        versionName "1.0"
+    }
+
+    buildTypes {
+        debug {
+            // VULN: debuggable stays true in all builds for lab purposes
+            debuggable true
+            minifyEnabled false
+        }
+        release {
+            debuggable true
+            minifyEnabled false
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
+    }
+}
+
+dependencies {
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'com.google.android.material:material:1.11.0'
+}

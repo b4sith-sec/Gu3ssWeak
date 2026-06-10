@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+>
+
+    <!-- VULN: Cleartext traffic allowed -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <application
+        android:allowBackup="true"
+        android:label="VulnDroid"
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true"
+        android:debuggable="true">
+
+        <!-- Main launcher -->
+        <activity android:name=".activities.MainActivity" android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- VULN-01: Exported activity with no permission -->
+        <activity
+            android:name=".activities.AdminPanelActivity"
+            android:exported="true" />
+
+        <!-- VULN-02: WebView activity exported, accepts arbitrary URLs via intent -->
+        <activity
+            android:name=".activities.WebViewActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <!-- VULN: Wildcard deeplink scheme — any URL accepted -->
+                <data android:scheme="vulndroid" android:host="*" />
+            </intent-filter>
+        </activity>
+
+        <!-- VULN-03: Deeplink to internal settings — no validation -->
+        <activity
+            android:name=".activities.DeeplinkActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="vulndroid" android:host="settings" />
+            </intent-filter>
+        </activity>
+
+        <!-- VULN-04: Exported BroadcastReceiver — no permission required -->
+        <receiver
+            android:name=".receivers.TokenReceiver"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.vulndroid.app.SEND_TOKEN" />
+            </intent-filter>
+        </receiver>
+
+        <!-- VULN-05: Exported Service — can be started by any app -->
+        <service
+            android:name=".services.DataSyncService"
+            android:exported="true" />
+
+    </application>
+</manifest>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="24dp"
+    android:gravity="center_horizontal"
+    android:background="#F8F9FA">
+    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:text="VulnDroid" android:textSize="28sp" android:textStyle="bold"
+        android:textColor="#D32F2F" android:layout_marginTop="32dp"/>
+    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:text="Vulnerable Android Lab" android:textSize="14sp"
+        android:textColor="#888888" android:layout_marginBottom="32dp"/>
+    <Button android:id="@+id/btn_webview" android:layout_width="match_parent"
+        android:layout_height="56dp" android:text="WebView Lab"
+        android:backgroundTint="#B71C1C" android:textColor="#FFFFFF" android:layout_marginBottom="16dp"/>
+    <Button android:id="@+id/btn_deeplink" android:layout_width="match_parent"
+        android:layout_height="56dp" android:text="Deeplink Lab"
+        android:backgroundTint="#E65100" android:textColor="#FFFFFF" android:layout_marginBottom="16dp"/>
+    <Button android:id="@+id/btn_admin" android:layout_width="match_parent"
+        android:layout_height="56dp" android:text="Admin Panel"
+        android:backgroundTint="#1565C0" android:textColor="#FFFFFF"/>
+</LinearLayout>
