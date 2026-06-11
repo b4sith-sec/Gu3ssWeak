@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0D0D0D">
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:orientation="vertical" android:padding="20dp">
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="Submit Flag" android:textSize="26sp" android:textStyle="bold"
+            android:textColor="#FF3B30" android:layout_marginTop="24dp"/>
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="Enter the flag you captured" android:textSize="13sp"
+            android:textColor="#666666" android:layout_marginTop="6dp" android:layout_marginBottom="28dp"/>
+        <EditText android:id="@+id/et_flag_input" android:layout_width="match_parent"
+            android:layout_height="52dp" android:hint="Gu3ssWeak{...}"
+            android:textColorHint="#444444" android:textColor="#FFFFFF"
+            android:textSize="13sp" android:fontFamily="monospace"
+            android:background="#1C1C1E" android:padding="14dp" android:singleLine="true"/>
+        <Button android:id="@+id/btn_submit_flag" android:layout_width="match_parent"
+            android:layout_height="52dp" android:text="Submit Flag"
+            android:backgroundTint="#FF3B30" android:textColor="#FFFFFF"
+            android:layout_marginTop="12dp"/>
+        <TextView android:id="@+id/tv_flag_result" android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:textSize="13sp"
+            android:fontFamily="monospace" android:lineSpacingMultiplier="1.6"
+            android:layout_marginTop="16dp" android:visibility="gone"/>
+        <View android:layout_width="match_parent" android:layout_height="0.5dp"
+            android:background="#1C1C1E" android:layout_marginTop="28dp" android:layout_marginBottom="16dp"/>
+        <Button android:id="@+id/btn_view_board" android:layout_width="match_parent"
+            android:layout_height="52dp" android:text="View CTF Scoreboard"
+            android:backgroundTint="#1C1C1E" android:textColor="#FFFFFF"/>
+    </LinearLayout>
+</ScrollView>

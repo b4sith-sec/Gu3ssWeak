@@ -9,7 +9,7 @@
 
     <application
         android:allowBackup="true"
-        android:label="VulnDroid"
+        android:label="Gu3ssWeak"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true"
         android:debuggable="true">
@@ -66,5 +66,8 @@
             android:name=".services.DataSyncService"
             android:exported="true" />
 
+            <activity android:name=".activities.FlagBoardActivity" android:exported="true"/>
+            <activity android:name=".activities.FlagSubmitActivity" android:exported="true"/>
+            <activity android:name=".activities.FlagBoardActivity" android:exported="true"/>
     </application>
 </manifest>
