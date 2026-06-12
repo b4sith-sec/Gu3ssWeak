@@ -14,13 +14,14 @@ public class FlagManager {
     public static final String FLAG_BR_03    = "Gu3ssWeak{s3ns1t1v3_d4ta_l0gcat_BR03}";
     public static final String FLAG_SV_02A   = "Gu3ssWeak{d4ta_w1p3_s3rv1c3_SV02A}";
     public static final String FLAG_SV_02B   = "Gu3ssWeak{d4ta_3xf1l_ssrf_SV02B}";
+    public static final String FLAG_SQL_01 = "Gu3ssWeak{sql_1nj3ct10n_adm1n_byp4ss_SQL01}";
     public static final String FLAG_MASTER   = "Gu3ssWeak{y0u_0wn3d_th3_wh0l3_4pp_GG}";
     public static final String[] ALL_FLAGS   = {
         FLAG_WV_01, FLAG_WV_02, FLAG_WV_03, FLAG_WV_04,
         FLAG_DL_02, FLAG_DL_03, FLAG_DL_CHAIN,
         FLAG_AP_01, FLAG_AP_02,
         FLAG_BR_02, FLAG_BR_03,
-        FLAG_SV_02A, FLAG_SV_02B
+        FLAG_SV_02A, FLAG_SV_02B, FLAG_SQL_01
     };
     public static void capture(android.content.Context ctx, String flag) {
         ctx.getSharedPreferences("ctf_flags", 0).edit().putBoolean(flag, true).apply();

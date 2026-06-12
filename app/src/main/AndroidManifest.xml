@@ -69,5 +69,6 @@
             <activity android:name=".activities.FlagBoardActivity" android:exported="true"/>
             <activity android:name=".activities.FlagSubmitActivity" android:exported="true"/>
             <activity android:name=".activities.FlagBoardActivity" android:exported="true"/>
+            <activity android:name=".activities.LoginActivity" android:exported="true"/>
     </application>
 </manifest>

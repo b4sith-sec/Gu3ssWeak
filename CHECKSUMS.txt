@@ -1,0 +1,8 @@
+Gu3ssWeak Artifact Checksums
+Generated: 2026-06-12 01:07:44 UTC
+
+File:   app-debug.apk
+Path:   app/build/outputs/apk/debug/app-debug.apk
+Size:   5.3M
+SHA256: 7b2de2c0a9b215ffddcef27f9c49f1c8f9e0b24699065b69ac3fbcfdca6f2683
+

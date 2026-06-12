@@ -106,6 +106,17 @@ public class FlagBoardActivity extends AppCompatActivity {
             layout.addView(master);
         }
 
+        // Submit Flag button
+        android.widget.Button btnSubmit = new android.widget.Button(this);
+        btnSubmit.setText("Submit Flag");
+        btnSubmit.setBackgroundColor(0xFFFF3B30);
+        btnSubmit.setTextColor(0xFFFFFFFF);
+        btnSubmit.setTextSize(15);
+        LinearLayout.LayoutParams bp = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, 140);
+        bp.setMargins(0, 24, 0, 0);
+        btnSubmit.setLayoutParams(bp);
+        btnSubmit.setOnClickListener(v -> startActivity(new android.content.Intent(this, FlagSubmitActivity.class)));
+        layout.addView(btnSubmit);
         scroll.addView(layout);
         setContentView(scroll);
     }

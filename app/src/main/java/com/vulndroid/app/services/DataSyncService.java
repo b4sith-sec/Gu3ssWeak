@@ -39,7 +39,8 @@ public class DataSyncService extends Service {
         if ("wipe_user_data".equals(action)) {
             // VULN: Any external app can wipe user data
             getSharedPreferences("user_prefs", MODE_PRIVATE).edit().clear().apply();
-            Log.d(TAG, "User data wiped by external trigger");
+            com.vulndroid.app.FlagManager.capture(this, com.vulndroid.app.FlagManager.FLAG_SV_02A);
+        Log.d(TAG, "User data wiped by external trigger");
 
         } else if ("sync".equals(action) && endpoint != null) {
             // VULN: Syncs data to caller-supplied endpoint — SSRF / data exfiltration

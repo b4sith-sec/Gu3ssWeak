@@ -31,6 +31,7 @@ public class TokenReceiver extends BroadcastReceiver {
         String user  = intent.getStringExtra("user");
 
         // VULN-BR-03: Logging sensitive data
+        com.vulndroid.app.FlagManager.capture(context, com.vulndroid.app.FlagManager.FLAG_BR_02);
         Log.d(TAG, "Received token for user: " + user + " | token: " + token);
 
         if (token != null) {

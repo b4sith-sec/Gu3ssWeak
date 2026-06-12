@@ -28,6 +28,7 @@ public class AdminPanelActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin);
 
+        com.vulndroid.app.FlagManager.capture(this, com.vulndroid.app.FlagManager.FLAG_AP_01);
         // VULN-AP-03: No isAdmin() check — anyone who reaches this screen gets full access
         TextView info = findViewById(R.id.admin_info);
         info.setText(

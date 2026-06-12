@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000">
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:orientation="vertical" android:padding="24dp">
+
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="Admin Login" android:textSize="28sp" android:textStyle="bold"
+            android:textColor="#FFFFFF" android:layout_marginTop="48dp" android:layout_marginBottom="8dp"/>
+
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="VULN-SQL-01 · SQL Injection Login Bypass"
+            android:textSize="11sp" android:textColor="#888888"
+            android:layout_marginBottom="32dp"/>
+
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="USERNAME" android:textSize="10sp"
+            android:textColor="#888888" android:letterSpacing="0.1"
+            android:layout_marginBottom="6dp"/>
+        <EditText android:id="@+id/et_username"
+            android:layout_width="match_parent" android:layout_height="52dp"
+            android:hint="Enter username" android:textColorHint="#444444"
+            android:textColor="#FFFFFF" android:textSize="14sp"
+            android:background="#111111" android:padding="14dp"
+            android:singleLine="true"/>
+
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="PASSWORD" android:textSize="10sp"
+            android:textColor="#888888" android:letterSpacing="0.1"
+            android:layout_marginTop="16dp" android:layout_marginBottom="6dp"/>
+        <EditText android:id="@+id/et_password"
+            android:layout_width="match_parent" android:layout_height="52dp"
+            android:hint="Enter password" android:textColorHint="#444444"
+            android:textColor="#FFFFFF" android:textSize="14sp"
+            android:background="#111111" android:padding="14dp"
+            android:singleLine="true" android:inputType="textPassword"/>
+
+        <Button android:id="@+id/btn_login"
+            android:layout_width="match_parent" android:layout_height="52dp"
+            android:text="Login" android:backgroundTint="#FFFFFF"
+            android:textColor="#000000" android:textSize="15sp"
+            android:layout_marginTop="20dp"/>
+
+        <TextView android:id="@+id/tv_result"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:textSize="13sp" android:fontFamily="monospace"
+            android:lineSpacingMultiplier="1.6" android:padding="16dp"
+            android:layout_marginTop="16dp" android:visibility="gone"/>
+
+        <View android:layout_width="match_parent" android:layout_height="0.5dp"
+            android:background="#222222" android:layout_marginTop="24dp"
+            android:layout_marginBottom="16dp"/>
+
+        <TextView android:id="@+id/tv_hint"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:textSize="12sp" android:textColor="#555555"
+            android:fontFamily="monospace" android:layout_marginBottom="8dp"/>
+
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="Try these payloads:\n' OR '1'='1\nadmin' --\n' OR 1=1 --"
+            android:textSize="12sp" android:textColor="#444444"
+            android:fontFamily="monospace" android:background="#111111"
+            android:padding="12dp" android:lineSpacingMultiplier="1.6"/>
+
+    </LinearLayout>
+</ScrollView>
