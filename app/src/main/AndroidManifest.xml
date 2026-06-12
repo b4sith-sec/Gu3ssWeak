@@ -70,11 +70,12 @@
 
             <activity android:name=".activities.FlagBoardActivity" android:exported="true"/>
             <activity android:name=".activities.FlagSubmitActivity" android:exported="true"/>
-            <activity android:name=".activities.FlagBoardActivity" android:exported="true"/>
+            
             <activity android:name=".activities.LoginActivity" android:exported="true"/>
             <activity android:name=".activities.NetworkLabActivity" android:exported="true"/>
             <activity android:name=".activities.LogcatLeakActivity" android:exported="true"/>
             <activity android:name=".activities.OtpBruteForceActivity" android:exported="true"/>
             <activity android:name=".activities.FileProviderActivity" android:exported="true"/>
+            <activity android:name=".activities.InsecureStorageActivity" android:exported="true"/>
     </application>
 </manifest>

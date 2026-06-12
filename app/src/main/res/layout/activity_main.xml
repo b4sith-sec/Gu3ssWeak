@@ -109,6 +109,13 @@
             android:layout_height="52dp" android:text="FP-01 - Path Traversal File Download"
             android:backgroundTint="#111111" android:textColor="#FFFFFF" android:textSize="12sp" android:layout_marginBottom="20dp"/>
 
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="STORAGE LABS" android:textSize="11sp"
+            android:textColor="#FFFFFF" android:letterSpacing="0.1" android:layout_marginBottom="8dp"/>
+        <Button android:id="@+id/btn_storage" android:layout_width="match_parent"
+            android:layout_height="52dp" android:text="STORE-01 - Plaintext SharedPreferences"
+            android:backgroundTint="#111111" android:textColor="#FFFFFF" android:textSize="12sp" android:layout_marginBottom="20dp"/>
+
         <!-- ADB -->
         <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
             android:text="ADB QUICK COMMANDS" android:textSize="11sp"
