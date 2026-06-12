@@ -75,5 +75,6 @@
             <activity android:name=".activities.NetworkLabActivity" android:exported="true"/>
             <activity android:name=".activities.LogcatLeakActivity" android:exported="true"/>
             <activity android:name=".activities.OtpBruteForceActivity" android:exported="true"/>
+            <activity android:name=".activities.FileProviderActivity" android:exported="true"/>
     </application>
 </manifest>

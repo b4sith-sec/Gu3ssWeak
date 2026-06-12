@@ -72,6 +72,8 @@ public class MainActivity extends AppCompatActivity {
         });
 
         // Submit + Scoreboard
+        findViewById(R.id.btn_fileprovider).setOnClickListener(v -> startActivity(new Intent(this, FileProviderActivity.class)));
+
         findViewById(R.id.btn_otp).setOnClickListener(v -> startActivity(new Intent(this, OtpBruteForceActivity.class)));
 
         findViewById(R.id.btn_network).setOnClickListener(v -> startActivity(new Intent(this, NetworkLabActivity.class)));
