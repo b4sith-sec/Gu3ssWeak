@@ -183,12 +183,6 @@ adb shell am startservice \
 
 ---
 
-## Disclaimer
-
-This application is intentionally insecure for **educational purposes only**. The authors are not responsible for misuse. Only use on devices and networks you own or have explicit written permission to test.
-
----
-
 ## License
 
 MIT — free to fork, modify, and use in security training.
@@ -202,18 +196,6 @@ MIT — free to fork, modify, and use in security training.
 - [SECURITY.md](SECURITY.md) — Security policy & responsible disclosure
 - [CHECKSUMS.txt](CHECKSUMS.txt) — SHA256 checksums for built APKs
 
-## Disclaimer
-
-This project is **purely educational**. All vulnerabilities are intentional and documented. Techniques shown here apply to real apps — but only test systems you own or are authorized to test. See [SECURITY.md](SECURITY.md) for full disclaimer and responsible disclosure guidance.
-
----
-
-## Documentation
-
-- ARCHITECTURE.md - How each vulnerable component works internally
-- MITIGATIONS.md - Fix and remediation guidance for every vulnerability
-- SECURITY.md - Security policy and responsible disclosure
-- CHECKSUMS.txt - SHA256 checksums for built APKs
 
 ## Disclaimer
 
