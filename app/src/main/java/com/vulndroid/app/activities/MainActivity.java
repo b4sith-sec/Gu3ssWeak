@@ -52,9 +52,7 @@ public class MainActivity extends AppCompatActivity {
             sendBroadcast(b);
             Toast.makeText(this, "Broadcast sent! Check logcat.", Toast.LENGTH_SHORT).show();
         });
-        findViewById(R.id.btn_broadcast2).setOnClickListener(v -> {
-            Toast.makeText(this, "Run: adb logcat | grep Gu3ssWeak_FLAG", Toast.LENGTH_LONG).show();
-        });
+        findViewById(R.id.btn_broadcast2).setOnClickListener(v -> startActivity(new Intent(this, LogcatLeakActivity.class)));
 
         // Service
         findViewById(R.id.btn_service_wipe).setOnClickListener(v -> {
@@ -74,6 +72,8 @@ public class MainActivity extends AppCompatActivity {
         });
 
         // Submit + Scoreboard
+        findViewById(R.id.btn_network).setOnClickListener(v -> startActivity(new Intent(this, NetworkLabActivity.class)));
+
         findViewById(R.id.btn_submit_flag).setOnClickListener(v -> startActivity(new Intent(this, FlagSubmitActivity.class)));
         findViewById(R.id.btn_scoreboard).setOnClickListener(v -> startActivity(new Intent(this, FlagBoardActivity.class)));
     }

@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000">
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:orientation="vertical" android:padding="24dp">
+
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="Gu3ssWeak"
+            android:textSize="30sp" android:textStyle="bold"
+            android:textColor="#FFFFFF" android:fontFamily="monospace"
+            android:layout_marginTop="32dp"/>
+
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="Vulnerable Android Security Lab"
+            android:textSize="13sp" android:textColor="#888888"
+            android:layout_marginTop="4dp" android:layout_marginBottom="24dp"/>
+
+        <View android:layout_width="match_parent" android:layout_height="0.5dp"
+            android:background="#222222" android:layout_marginBottom="24dp"/>
+
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="ABOUT" android:textSize="11sp"
+            android:textColor="#FFFFFF" android:letterSpacing="0.15"
+            android:layout_marginBottom="8dp"/>
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="Gu3ssWeak is a deliberately vulnerable Android application containing 19 OWASP Mobile Top 10 vulnerabilities. Each lab demonstrates a real exploitation technique, with mitigation guidance documented for every issue."
+            android:textSize="13sp" android:textColor="#AAAAAA"
+            android:lineSpacingMultiplier="1.5" android:layout_marginBottom="24dp"/>
+
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="ARCHITECTURE" android:textSize="11sp"
+            android:textColor="#FFFFFF" android:letterSpacing="0.15"
+            android:layout_marginBottom="8dp"/>
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="com.vulndroid.app/\n  activities/\n    WebViewActivity     WV-01 to WV-05\n    DeeplinkActivity     DL-01 to DL-04, CHAIN\n    LoginActivity         SQL-01\n    AdminPanelActivity   AP-01 to AP-03\n    FlagBoardActivity     CTF scoreboard\n    FlagSubmitActivity    flag submission\n  receivers/\n    TokenReceiver         BR-01 to BR-03\n  services/\n    DataSyncService       SV-01 to SV-02b\n  FlagManager             CTF state"
+            android:textSize="10sp" android:textColor="#888888"
+            android:fontFamily="monospace" android:background="#0A0A0A"
+            android:padding="14dp" android:lineSpacingMultiplier="1.4"
+            android:layout_marginBottom="24dp"/>
+
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="VULNERABILITY CATEGORIES" android:textSize="11sp"
+            android:textColor="#FFFFFF" android:letterSpacing="0.15"
+            android:layout_marginBottom="8dp"/>
+
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="horizontal" android:layout_marginBottom="8dp">
+            <TextView android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content"
+                android:text="WebView" android:textColor="#FFFFFF" android:textSize="12sp"/>
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="5 vulns" android:textColor="#555555" android:textSize="12sp" android:fontFamily="monospace"/>
+        </LinearLayout>
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="horizontal" android:layout_marginBottom="8dp">
+            <TextView android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content"
+                android:text="Deeplink" android:textColor="#FFFFFF" android:textSize="12sp"/>
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="5 vulns" android:textColor="#555555" android:textSize="12sp" android:fontFamily="monospace"/>
+        </LinearLayout>
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="horizontal" android:layout_marginBottom="8dp">
+            <TextView android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content"
+                android:text="Auth SQL Injection" android:textColor="#FFFFFF" android:textSize="12sp"/>
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="1 vuln" android:textColor="#555555" android:textSize="12sp" android:fontFamily="monospace"/>
+        </LinearLayout>
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="horizontal" android:layout_marginBottom="8dp">
+            <TextView android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content"
+                android:text="Admin Panel" android:textColor="#FFFFFF" android:textSize="12sp"/>
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="3 vulns" android:textColor="#555555" android:textSize="12sp" android:fontFamily="monospace"/>
+        </LinearLayout>
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="horizontal" android:layout_marginBottom="8dp">
+            <TextView android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content"
+                android:text="Broadcast Receiver" android:textColor="#FFFFFF" android:textSize="12sp"/>
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="3 vulns" android:textColor="#555555" android:textSize="12sp" android:fontFamily="monospace"/>
+        </LinearLayout>
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="horizontal" android:layout_marginBottom="24dp">
+            <TextView android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content"
+                android:text="Service" android:textColor="#FFFFFF" android:textSize="12sp"/>
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="3 vulns" android:textColor="#555555" android:textSize="12sp" android:fontFamily="monospace"/>
+        </LinearLayout>
+
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="For authorized security research and education only. All vulnerabilities are intentional and documented in MITIGATIONS.md."
+            android:textSize="11sp" android:textColor="#666666"
+            android:background="#0A0A0A" android:padding="14dp"
+            android:lineSpacingMultiplier="1.4" android:layout_marginBottom="32dp"/>
+
+        <Button android:id="@+id/btn_continue"
+            android:layout_width="match_parent" android:layout_height="56dp"
+            android:text="Enter Lab" android:backgroundTint="#FFFFFF"
+            android:textColor="#000000" android:textSize="15sp"
+            android:layout_marginBottom="40dp"/>
+
+    </LinearLayout>
+</ScrollView>

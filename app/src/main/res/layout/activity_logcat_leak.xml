@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="#000000">
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:orientation="vertical" android:padding="24dp">
+
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="Logcat Leak" android:textSize="26sp" android:textStyle="bold"
+            android:textColor="#FFFFFF" android:layout_marginTop="32dp"/>
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="VULN-BR-03 - Sensitive data written to logcat"
+            android:textSize="11sp" android:textColor="#888888" android:layout_marginBottom="24dp"/>
+
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="Type into the fields below. Every character you type is logged via Log.d in plaintext, including the password field."
+            android:textSize="12sp" android:textColor="#AAAAAA"
+            android:background="#0A0A0A" android:padding="14dp"
+            android:lineSpacingMultiplier="1.5" android:layout_marginBottom="24dp"/>
+
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="USERNAME" android:textSize="10sp"
+            android:textColor="#888888" android:letterSpacing="0.1"
+            android:layout_marginBottom="6dp"/>
+        <EditText android:id="@+id/et_log_username"
+            android:layout_width="match_parent" android:layout_height="52dp"
+            android:hint="Type something..." android:textColorHint="#444444"
+            android:textColor="#FFFFFF" android:textSize="14sp"
+            android:background="#111111" android:padding="14dp"
+            android:singleLine="true"/>
+
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="PASSWORD" android:textSize="10sp"
+            android:textColor="#888888" android:letterSpacing="0.1"
+            android:layout_marginTop="16dp" android:layout_marginBottom="6dp"/>
+        <EditText android:id="@+id/et_log_password"
+            android:layout_width="match_parent" android:layout_height="52dp"
+            android:hint="Type a password..." android:textColorHint="#444444"
+            android:textColor="#FFFFFF" android:textSize="14sp"
+            android:background="#111111" android:padding="14dp"
+            android:singleLine="true" android:inputType="textPassword"/>
+
+        <Button android:id="@+id/btn_check_logcat"
+            android:layout_width="match_parent" android:layout_height="52dp"
+            android:text="How do I check logcat?" android:backgroundTint="#FFFFFF"
+            android:textColor="#000000" android:textSize="14sp"
+            android:layout_marginTop="20dp"/>
+
+        <TextView android:id="@+id/tv_log_hint"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:textSize="12sp" android:textColor="#30D158" android:fontFamily="monospace"
+            android:background="#0A0A0A" android:padding="14dp"
+            android:lineSpacingMultiplier="1.5" android:layout_marginTop="16dp"
+            android:visibility="gone"/>
+
+    </LinearLayout>
+</ScrollView>

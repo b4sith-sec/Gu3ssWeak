@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="#000000">
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:orientation="vertical" android:padding="24dp">
+
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="Network Interception" android:textSize="26sp" android:textStyle="bold"
+            android:textColor="#FFFFFF" android:layout_marginTop="32dp"/>
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="VULN-NET-01 - Cleartext traffic, no cert pinning"
+            android:textSize="11sp" android:textColor="#888888" android:layout_marginBottom="24dp"/>
+
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="Objectives:\n1. Configure Burp Suite as HTTP proxy on device/emulator\n2. Install Burp CA certificate on device\n3. Send HTTP request below and observe in Burp\n4. Send HTTPS request below and observe (no pinning blocks it)"
+            android:textSize="12sp" android:textColor="#AAAAAA" android:fontFamily="monospace"
+            android:background="#0A0A0A" android:padding="14dp" android:lineSpacingMultiplier="1.5"
+            android:layout_marginBottom="24dp"/>
+
+        <Button android:id="@+id/btn_send_http"
+            android:layout_width="match_parent" android:layout_height="52dp"
+            android:text="Send HTTP Request" android:backgroundTint="#111111"
+            android:textColor="#FFFFFF" android:textSize="13sp" android:layout_marginBottom="8dp"/>
+
+        <Button android:id="@+id/btn_send_https"
+            android:layout_width="match_parent" android:layout_height="52dp"
+            android:text="Send HTTPS Request" android:backgroundTint="#111111"
+            android:textColor="#FFFFFF" android:textSize="13sp" android:layout_marginBottom="20dp"/>
+
+        <TextView android:id="@+id/tv_net_result"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:textSize="11sp" android:textColor="#30D158" android:fontFamily="monospace"
+            android:background="#0A0A0A" android:padding="14dp" android:lineSpacingMultiplier="1.4"
+            android:text="Tap a button to send a request"/>
+
+    </LinearLayout>
+</ScrollView>

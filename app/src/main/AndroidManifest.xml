@@ -15,12 +15,14 @@
         android:debuggable="true">
 
         <!-- Main launcher -->
-        <activity android:name=".activities.MainActivity" android:exported="true">
+        <activity android:name=".activities.SplashActivity" android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".activities.ArchitectureActivity" android:exported="true"/>
+        <activity android:name=".activities.MainActivity" android:exported="true"/>
 
         <!-- VULN-01: Exported activity with no permission -->
         <activity
@@ -70,5 +72,7 @@
             <activity android:name=".activities.FlagSubmitActivity" android:exported="true"/>
             <activity android:name=".activities.FlagBoardActivity" android:exported="true"/>
             <activity android:name=".activities.LoginActivity" android:exported="true"/>
+            <activity android:name=".activities.NetworkLabActivity" android:exported="true"/>
+            <activity android:name=".activities.LogcatLeakActivity" android:exported="true"/>
     </application>
 </manifest>
