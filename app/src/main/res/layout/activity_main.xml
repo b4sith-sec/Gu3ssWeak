@@ -103,10 +103,10 @@
             android:backgroundTint="#111111" android:textColor="#FFFFFF" android:textSize="12sp" android:layout_marginBottom="20dp"/>
 
         <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-            android:text="FILE ACCESS LABS" android:textSize="11sp"
+            android:text="LFI LABS" android:textSize="11sp"
             android:textColor="#FFFFFF" android:letterSpacing="0.1" android:layout_marginBottom="8dp"/>
         <Button android:id="@+id/btn_fileprovider" android:layout_width="match_parent"
-            android:layout_height="52dp" android:text="FP-01 - Path Traversal File Download"
+            android:layout_height="52dp" android:text="LFI-01 - Local File Inclusion via Path Traversal"
             android:backgroundTint="#111111" android:textColor="#FFFFFF" android:textSize="12sp" android:layout_marginBottom="20dp"/>
 
         <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
@@ -114,6 +114,13 @@
             android:textColor="#FFFFFF" android:letterSpacing="0.1" android:layout_marginBottom="8dp"/>
         <Button android:id="@+id/btn_storage" android:layout_width="match_parent"
             android:layout_height="52dp" android:text="STORE-01 - Plaintext SharedPreferences"
+            android:backgroundTint="#111111" android:textColor="#FFFFFF" android:textSize="12sp" android:layout_marginBottom="20dp"/>
+
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="XSS LABS" android:textSize="11sp"
+            android:textColor="#FFFFFF" android:letterSpacing="0.1" android:layout_marginBottom="8dp"/>
+        <Button android:id="@+id/btn_xss" android:layout_width="match_parent"
+            android:layout_height="52dp" android:text="XSS-01 - Reflected XSS, Filter Bypass"
             android:backgroundTint="#111111" android:textColor="#FFFFFF" android:textSize="12sp" android:layout_marginBottom="20dp"/>
 
         <!-- ADB -->

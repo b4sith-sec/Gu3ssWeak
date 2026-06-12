@@ -72,6 +72,8 @@ public class MainActivity extends AppCompatActivity {
         });
 
         // Submit + Scoreboard
+        findViewById(R.id.btn_xss).setOnClickListener(v -> startActivity(new Intent(this, XssLabActivity.class)));
+
         findViewById(R.id.btn_storage).setOnClickListener(v -> startActivity(new Intent(this, InsecureStorageActivity.class)));
 
         findViewById(R.id.btn_fileprovider).setOnClickListener(v -> startActivity(new Intent(this, FileProviderActivity.class)));

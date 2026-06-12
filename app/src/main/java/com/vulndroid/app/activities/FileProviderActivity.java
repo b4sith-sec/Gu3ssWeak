@@ -57,7 +57,14 @@ public class FileProviderActivity extends AppCompatActivity {
         btnDownload.setOnClickListener(v -> {
             String filename = etFilename.getText().toString().trim();
 
-            // VULN-FP-01: No sanitization - filename concatenated directly
+            // VULN-LFI-01: URL-decode the input before use - a naive filter
+            // might block literal "../" but miss percent-encoded variants
+            // like %2e%2e%2f or %2e%2e/
+            try {
+                filename = java.net.URLDecoder.decode(filename, "UTF-8");
+            } catch (Exception ignored) {}
+
+            // No sanitization after decoding - filename concatenated directly
             File target = new File(attachmentsDir, filename);
 
             try {

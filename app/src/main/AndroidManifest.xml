@@ -77,5 +77,6 @@
             <activity android:name=".activities.OtpBruteForceActivity" android:exported="true"/>
             <activity android:name=".activities.FileProviderActivity" android:exported="true"/>
             <activity android:name=".activities.InsecureStorageActivity" android:exported="true"/>
+            <activity android:name=".activities.XssLabActivity" android:exported="true"/>
     </application>
 </manifest>

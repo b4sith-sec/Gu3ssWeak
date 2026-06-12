@@ -9,7 +9,7 @@
             android:text="Attachments" android:textSize="26sp" android:textStyle="bold"
             android:textColor="#FFFFFF" android:layout_marginTop="32dp"/>
         <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-            android:text="VULN-FP-01 - Path traversal in file download"
+            android:text="VULN-LFI-01 - Local File Inclusion via path traversal"
             android:textSize="11sp" android:textColor="#888888" android:layout_marginBottom="24dp"/>
 
         <TextView android:layout_width="match_parent" android:layout_height="wrap_content"

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:orientation="vertical" android:background="#000000">
+
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:orientation="vertical" android:padding="24dp">
+
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="Search" android:textSize="26sp" android:textStyle="bold"
+            android:textColor="#FFFFFF" android:layout_marginTop="16dp"/>
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="VULN-XSS-01 - Reflected XSS, naive blocklist filter"
+            android:textSize="11sp" android:textColor="#888888" android:layout_marginBottom="16dp"/>
+
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="Input is reflected into the page below. A filter strips literal &lt;script&gt; tags only (case-sensitive, single pass)."
+            android:textSize="12sp" android:textColor="#AAAAAA"
+            android:background="#0A0A0A" android:padding="14dp"
+            android:lineSpacingMultiplier="1.5" android:layout_marginBottom="16dp"/>
+
+        <EditText android:id="@+id/et_xss_input"
+            android:layout_width="match_parent" android:layout_height="52dp"
+            android:hint="Search query" android:textColorHint="#444444"
+            android:textColor="#FFFFFF" android:textSize="13sp"
+            android:background="#111111" android:padding="14dp"
+            android:singleLine="true" android:fontFamily="monospace"/>
+
+        <Button android:id="@+id/btn_xss_render"
+            android:layout_width="match_parent" android:layout_height="52dp"
+            android:text="Search" android:backgroundTint="#FFFFFF"
+            android:textColor="#000000" android:textSize="14sp"
+            android:layout_marginTop="12dp"/>
+    </LinearLayout>
+
+    <WebView android:id="@+id/webview_xss"
+        android:layout_width="match_parent" android:layout_height="0dp"
+        android:layout_weight="1"/>
+
+</LinearLayout>
