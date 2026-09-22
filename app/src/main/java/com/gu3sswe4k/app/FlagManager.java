@@ -1,4 +1,4 @@
-package com.vulndroid.app;
+package com.gu3sswe4k.app;
 
 public class FlagManager {
     public static final String FLAG_WV_01    = "Gu3ssWeak{js_3nabl3d_n0_0r1g1n_WV01}";

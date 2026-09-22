@@ -1,4 +1,4 @@
-package com.vulndroid.app.activities;
+package com.gu3sswe4k.app.activities;
 
 import android.content.Intent;
 import android.net.Uri;
@@ -18,7 +18,7 @@ import androidx.appcompat.app.AppCompatActivity;
  * Attack vectors:
  *   # Open admin panel via deeplink redirect
  *   adb shell am start -a android.intent.action.VIEW \
- *       -d "vulndroid://settings?redirect=com.vulndroid.app.activities.AdminPanelActivity"
+ *       -d "vulndroid://settings?redirect=com.gu3sswe4k.app.activities.AdminPanelActivity"
  *
  *   # Inject a fake token via deeplink
  *   adb shell am start -a android.intent.action.VIEW \

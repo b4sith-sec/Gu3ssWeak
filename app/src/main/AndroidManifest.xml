@@ -59,7 +59,7 @@
             android:name=".receivers.TokenReceiver"
             android:exported="true">
             <intent-filter>
-                <action android:name="com.vulndroid.app.SEND_TOKEN" />
+                <action android:name="com.gu3sswe4k.app.SEND_TOKEN" />
             </intent-filter>
         </receiver>
 
@@ -78,5 +78,13 @@
             <activity android:name=".activities.FileProviderActivity" android:exported="true"/>
             <activity android:name=".activities.InsecureStorageActivity" android:exported="true"/>
             <activity android:name=".activities.XssLabActivity" android:exported="true"/>
+        <!-- VULN-CP-01: ContentProvider grant-scope SQL injection (CVE-2026-28576 pattern) -->
+        <provider
+            android:name=".providers.VulnContactProvider"
+            android:authorities="com.gu3sswe4k.app.contacts"
+            android:exported="true"
+            android:grantUriPermissions="true">
+            <grant-uri-permission android:pathPattern="/contacts/.*" />
+        </provider>
     </application>
 </manifest>

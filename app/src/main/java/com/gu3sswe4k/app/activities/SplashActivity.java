@@ -1,10 +1,10 @@
-package com.vulndroid.app.activities;
+package com.gu3sswe4k.app.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import androidx.appcompat.app.AppCompatActivity;
-import com.vulndroid.app.R;
+import com.gu3sswe4k.app.R;
 
 public class SplashActivity extends AppCompatActivity {
     @Override

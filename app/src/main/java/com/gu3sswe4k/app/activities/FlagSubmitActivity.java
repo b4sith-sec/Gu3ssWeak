@@ -1,10 +1,10 @@
-package com.vulndroid.app.activities;
+package com.gu3sswe4k.app.activities;
 
 import android.os.Bundle;
 import android.widget.*;
 import androidx.appcompat.app.AppCompatActivity;
-import com.vulndroid.app.FlagManager;
-import com.vulndroid.app.R;
+import com.gu3sswe4k.app.FlagManager;
+import com.gu3sswe4k.app.R;
 
 public class FlagSubmitActivity extends AppCompatActivity {
     @Override

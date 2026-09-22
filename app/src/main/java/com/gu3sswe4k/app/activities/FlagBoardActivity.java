@@ -1,9 +1,9 @@
-package com.vulndroid.app.activities;
+package com.gu3sswe4k.app.activities;
 
 import android.os.Bundle;
 import android.widget.*;
 import androidx.appcompat.app.AppCompatActivity;
-import com.vulndroid.app.FlagManager;
+import com.gu3sswe4k.app.FlagManager;
 
 public class FlagBoardActivity extends AppCompatActivity {
     @Override

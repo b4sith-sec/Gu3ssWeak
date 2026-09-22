@@ -52,7 +52,7 @@
             android:layout_marginTop="16dp" android:visibility="gone"/>
 
         <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
-            android:text="Exploit: adb shell run-as com.vulndroid.app cat /data/data/com.vulndroid.app/shared_prefs/login_prefs.xml"
+            android:text="Exploit: adb shell run-as com.gu3sswe4k.app cat /data/data/com.gu3sswe4k.app/shared_prefs/login_prefs.xml"
             android:textSize="11sp" android:textColor="#555555" android:fontFamily="monospace"
             android:background="#0A0A0A" android:padding="14dp"
             android:lineSpacingMultiplier="1.5" android:layout_marginTop="24dp"/>

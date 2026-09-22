@@ -1,9 +1,9 @@
-package com.vulndroid.app.activities;
+package com.gu3sswe4k.app.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
-import com.vulndroid.app.R;
+import com.gu3sswe4k.app.R;
 
 public class ArchitectureActivity extends AppCompatActivity {
     @Override

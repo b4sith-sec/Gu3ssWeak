@@ -1,12 +1,12 @@
-package com.vulndroid.app.activities;
+package com.gu3sswe4k.app.activities;
 
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
-import com.vulndroid.app.FlagManager;
-import com.vulndroid.app.R;
+import com.gu3sswe4k.app.FlagManager;
+import com.gu3sswe4k.app.R;
 
 /**
  * VULN-STORE-01: Sensitive data stored in plaintext SharedPreferences
@@ -16,11 +16,11 @@ import com.vulndroid.app.R;
  * Android Keystore not used). Any app with root, or anyone with
  * adb backup/run-as access, can read:
  *
- *   /data/data/com.vulndroid.app/shared_prefs/login_prefs.xml
+ *   /data/data/com.gu3sswe4k.app/shared_prefs/login_prefs.xml
  *
  * Exploit:
- *   adb shell run-as com.vulndroid.app cat \
- *     /data/data/com.vulndroid.app/shared_prefs/login_prefs.xml
+ *   adb shell run-as com.gu3sswe4k.app cat \
+ *     /data/data/com.gu3sswe4k.app/shared_prefs/login_prefs.xml
  */
 public class InsecureStorageActivity extends AppCompatActivity {
 
@@ -43,7 +43,7 @@ public class InsecureStorageActivity extends AppCompatActivity {
                 "Currently stored (plaintext):\n\n" +
                 "username = " + savedUser + "\n" +
                 "password = " + savedPass + "\n\n" +
-                "File: /data/data/com.vulndroid.app/shared_prefs/login_prefs.xml"
+                "File: /data/data/com.gu3sswe4k.app/shared_prefs/login_prefs.xml"
             );
             tvResult.setVisibility(android.view.View.VISIBLE);
         }
@@ -64,7 +64,7 @@ public class InsecureStorageActivity extends AppCompatActivity {
             tvResult.setText(
                 "Saved!\n\n" +
                 "Stored in plaintext at:\n" +
-                "/data/data/com.vulndroid.app/shared_prefs/login_prefs.xml\n\n" +
+                "/data/data/com.gu3sswe4k.app/shared_prefs/login_prefs.xml\n\n" +
                 "username = " + user + "\n" +
                 "password = " + pass + "\n\n" +
                 "FLAG: " + FlagManager.FLAG_STORE_01

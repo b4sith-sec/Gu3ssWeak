@@ -1,9 +1,9 @@
-package com.vulndroid.app.activities;
+package com.gu3sswe4k.app.activities;
 
 import android.os.Bundle;
 import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
-import com.vulndroid.app.R;
+import com.gu3sswe4k.app.R;
 
 /**
  * VULNERABILITY LAB — AdminPanelActivity
@@ -14,7 +14,7 @@ import com.vulndroid.app.R;
  *  [VULN-AP-03] No authentication check before showing admin UI
  *
  * Attack vector:
- *   adb shell am start -n com.vulndroid.app/.activities.AdminPanelActivity
+ *   adb shell am start -n com.gu3sswe4k.app/.activities.AdminPanelActivity
  */
 public class AdminPanelActivity extends AppCompatActivity {
 
@@ -28,7 +28,7 @@ public class AdminPanelActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin);
 
-        com.vulndroid.app.FlagManager.capture(this, com.vulndroid.app.FlagManager.FLAG_AP_01);
+        com.gu3sswe4k.app.FlagManager.capture(this, com.gu3sswe4k.app.FlagManager.FLAG_AP_01);
         // VULN-AP-03: No isAdmin() check — anyone who reaches this screen gets full access
         TextView info = findViewById(R.id.admin_info);
         info.setText(

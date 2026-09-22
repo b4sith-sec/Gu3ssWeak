@@ -4,10 +4,10 @@ plugins {
 
 android {
     compileSdk 34
-    namespace 'com.vulndroid.app'
+    namespace 'com.gu3sswe4k.app'
 
     defaultConfig {
-        applicationId "com.vulndroid.app"
+        applicationId "com.gu3sswe4k.app"
         minSdk 24
         targetSdk 34
         versionCode 1

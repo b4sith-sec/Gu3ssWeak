@@ -1,4 +1,4 @@
-package com.vulndroid.app.activities;
+package com.gu3sswe4k.app.activities;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
@@ -8,7 +8,7 @@ import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import androidx.appcompat.app.AppCompatActivity;
-import com.vulndroid.app.R;
+import com.gu3sswe4k.app.R;
 
 /**
  * VULNERABILITY LAB — WebViewActivity
@@ -21,11 +21,11 @@ import com.vulndroid.app.R;
  *  [VULN-WV-05] Arbitrary deeplink can load file:// or javascript: URLs
  *
  * Attack vectors:
- *   adb shell am start -n com.vulndroid.app/.activities.WebViewActivity \
+ *   adb shell am start -n com.gu3sswe4k.app/.activities.WebViewActivity \
  *       --es "url" "javascript:VulnBridge.stealToken()"
  *
- *   adb shell am start -n com.vulndroid.app/.activities.WebViewActivity \
- *       --es "url" "file:///data/data/com.vulndroid.app/shared_prefs/user.xml"
+ *   adb shell am start -n com.gu3sswe4k.app/.activities.WebViewActivity \
+ *       --es "url" "file:///data/data/com.gu3sswe4k.app/shared_prefs/user.xml"
  */
 public class WebViewActivity extends AppCompatActivity {
 

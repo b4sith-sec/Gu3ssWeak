@@ -128,7 +128,7 @@
             android:text="ADB QUICK COMMANDS" android:textSize="11sp"
             android:textColor="#FFFFFF" android:letterSpacing="0.1" android:layout_marginBottom="8dp"/>
         <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
-            android:text="$ adb shell am broadcast -a com.vulndroid.app.SEND_TOKEN --es token FAKE&#10;$ adb shell am start -n com.vulndroid.app/.activities.AdminPanelActivity&#10;$ adb logcat | grep Gu3ssWeak_FLAG"
+            android:text="$ adb shell am broadcast -a com.gu3sswe4k.app.SEND_TOKEN --es token FAKE&#10;$ adb shell am start -n com.gu3sswe4k.app/.activities.AdminPanelActivity&#10;$ adb logcat | grep Gu3ssWeak_FLAG"
             android:background="#111111" android:textColor="#FFFFFF"
             android:fontFamily="monospace" android:textSize="10sp"
             android:padding="12dp" android:lineSpacingMultiplier="1.6"

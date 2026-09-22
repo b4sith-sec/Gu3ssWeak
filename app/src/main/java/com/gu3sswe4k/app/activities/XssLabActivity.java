@@ -1,4 +1,4 @@
-package com.vulndroid.app.activities;
+package com.gu3sswe4k.app.activities;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
@@ -8,8 +8,8 @@ import android.webkit.WebViewClient;
 import android.widget.Button;
 import android.widget.EditText;
 import androidx.appcompat.app.AppCompatActivity;
-import com.vulndroid.app.FlagManager;
-import com.vulndroid.app.R;
+import com.gu3sswe4k.app.FlagManager;
+import com.gu3sswe4k.app.R;
 
 /**
  * VULN-XSS-01: Reflected XSS with naive blocklist filter

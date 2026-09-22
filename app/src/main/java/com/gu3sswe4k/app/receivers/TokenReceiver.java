@@ -1,4 +1,4 @@
-package com.vulndroid.app.receivers;
+package com.gu3sswe4k.app.receivers;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -15,7 +15,7 @@ import android.util.Log;
  *
  * Attack vectors:
  *   # Inject a fake auth token
- *   adb shell am broadcast -a com.vulndroid.app.SEND_TOKEN \
+ *   adb shell am broadcast -a com.gu3sswe4k.app.SEND_TOKEN \
  *       --es "token" "ATTACKER_TOKEN" --es "user" "admin"
  *
  *   # Read logs to find intercepted tokens
@@ -31,7 +31,7 @@ public class TokenReceiver extends BroadcastReceiver {
         String user  = intent.getStringExtra("user");
 
         // VULN-BR-03: Logging sensitive data
-        com.vulndroid.app.FlagManager.capture(context, com.vulndroid.app.FlagManager.FLAG_BR_02);
+        com.gu3sswe4k.app.FlagManager.capture(context, com.gu3sswe4k.app.FlagManager.FLAG_BR_02);
         Log.d(TAG, "Received token for user: " + user + " | token: " + token);
 
         if (token != null) {
