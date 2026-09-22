@@ -66,6 +66,14 @@
             android:layout_height="52dp" android:text="AP-01/02/03 · Admin Panel Direct Access"
             android:backgroundTint="#111111" android:textColor="#FFFFFF" android:textSize="12sp" android:layout_marginBottom="16dp"/>
 
+        <!-- CONTENTPROVIDER -->
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="CONTENTPROVIDER LABS" android:textSize="11sp"
+            android:textColor="#FFFFFF" android:letterSpacing="0.1" android:layout_marginBottom="8dp"/>
+        <Button android:id="@+id/btn_contact_provider" android:layout_width="match_parent"
+            android:layout_height="52dp" android:text="CP-01 · Contact Grant SQL Injection"
+            android:backgroundTint="#111111" android:textColor="#FFFFFF" android:textSize="12sp" android:layout_marginBottom="16dp"/>
+
         <!-- BROADCAST -->
         <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
             android:text="BROADCAST RECEIVER LABS" android:textSize="11sp"

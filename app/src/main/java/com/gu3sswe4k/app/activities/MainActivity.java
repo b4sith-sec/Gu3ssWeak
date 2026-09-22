@@ -43,6 +43,9 @@ public class MainActivity extends AppCompatActivity {
         // Admin panel direct
         findViewById(R.id.btn_admin).setOnClickListener(v -> startActivity(new Intent(this, AdminPanelActivity.class)));
 
+        // Contact grant SQL injection
+        findViewById(R.id.btn_contact_provider).setOnClickListener(v -> startActivity(new Intent(this, ContactPickerActivity.class)));
+
         // Broadcast
         findViewById(R.id.btn_broadcast).setOnClickListener(v -> {
             Intent b = new Intent("com.gu3sswe4k.app.SEND_TOKEN");

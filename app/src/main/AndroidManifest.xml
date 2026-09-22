@@ -78,6 +78,10 @@
             <activity android:name=".activities.FileProviderActivity" android:exported="true"/>
             <activity android:name=".activities.InsecureStorageActivity" android:exported="true"/>
             <activity android:name=".activities.XssLabActivity" android:exported="true"/>
+        <activity
+            android:name=".activities.ContactPickerActivity"
+            android:exported="false" />
+
         <!-- VULN-CP-01: ContentProvider grant-scope SQL injection (CVE-2026-28576 pattern) -->
         <provider
             android:name=".providers.VulnContactProvider"

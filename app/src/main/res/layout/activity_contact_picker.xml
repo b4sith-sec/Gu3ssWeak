@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#000000"
+    android:padding="20dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="CP-01 · Contact Grant SQL Injection"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        android:layout_marginBottom="16dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Step 1: Tap to simulate picking ONE contact via the system-style picker. You will be granted read access to exactly that contact."
+        android:textColor="#AAAAAA"
+        android:textSize="12sp"
+        android:layout_marginBottom="12dp"/>
+
+    <Button
+        android:id="@+id/btn_pick_contact"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:text="Pick One Contact"
+        android:backgroundTint="#FFFFFF"
+        android:textColor="#000000"
+        android:layout_marginBottom="20dp"/>
+
+    <TextView
+        android:id="@+id/tv_grant_info"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="No grant yet."
+        android:textColor="#00FF00"
+        android:textSize="12sp"
+        android:layout_marginBottom="20dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Step 2: Enter a WHERE clause. A normal caller would only ever match the granted row. Try smuggling a subquery."
+        android:textColor="#AAAAAA"
+        android:textSize="12sp"
+        android:layout_marginBottom="8dp"/>
+
+    <EditText
+        android:id="@+id/et_where_clause"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="e.g. 1 AND (SELECT substr(notes,1,1) FROM contacts WHERE _id=2)='F'"
+        android:textColorHint="#666666"
+        android:textColor="#FFFFFF"
+        android:inputType="text"
+        android:layout_marginBottom="12dp"/>
+
+    <Button
+        android:id="@+id/btn_run_query"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:text="Run Query Through Grant"
+        android:backgroundTint="#111111"
+        android:textColor="#FFFFFF"
+        android:layout_marginBottom="20dp"/>
+
+    <TextView
+        android:id="@+id/tv_query_result"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textColor="#FFFF00"
+        android:textSize="12sp"/>
+
+</LinearLayout>
