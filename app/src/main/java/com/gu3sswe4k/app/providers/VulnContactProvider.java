@@ -76,9 +76,9 @@ public class VulnContactProvider extends ContentProvider {
                     "name TEXT, phone TEXT, email TEXT, notes TEXT)");
 
             db.execSQL("INSERT INTO contacts (name, phone, email, notes) VALUES " +
-                    "('Alice Victim','+1-555-SECRET-01','alice.victim@corp.example','FLAG{CP-01_grant_bypass}')");
+                    "('Alice Victim','+1-555-SECRET-01','alice.victim@corp.example','no secrets here')");
             db.execSQL("INSERT INTO contacts (name, phone, email, notes) VALUES " +
-                    "('Bob Manager','+1-555-777-0002','bob.manager@corp.example','internal notes')");
+                    "('Bob Manager','+1-555-777-0002','bob.manager@corp.example','FLAG{CP-01_grant_bypass}')");
             db.execSQL("INSERT INTO contacts (name, phone, email, notes) VALUES " +
                     "('Carol Doctor','+1-555-999-0003','carol.doctor@med.example','patient notes')");
         }

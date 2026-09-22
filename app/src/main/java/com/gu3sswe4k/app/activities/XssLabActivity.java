@@ -25,6 +25,12 @@ import com.gu3sswe4k.app.R;
  *   <img src=x onerror=alert(document.title)>
  *   <svg onload=alert(1)>
  *   <ScRiPt>alert(1)</ScRiPt>
+ *
+ * VULN-XSS-02: The bypass payload above can go further than alert() — the
+ * same page also exposes the real VulnBridge (shared with WebViewActivity),
+ * so injected JS can call privileged bridge methods and exfiltrate data:
+ *
+ *   <img src=x onerror="XssCheck.onBridgeExfil('UID='+VulnBridge.getUid()+' TOKEN='+VulnBridge.stealToken())">
  */
 public class XssLabActivity extends AppCompatActivity {
 
@@ -48,7 +54,26 @@ public class XssLabActivity extends AppCompatActivity {
             public void onXssTriggered() {
                 FlagManager.capture(XssLabActivity.this, FlagManager.FLAG_XSS_01);
             }
+
+            // VULN-XSS-02: the payload calls into the REAL VulnBridge (below)
+            // to pull privileged data, then reports it back here — modeling
+            // exfiltration to an attacker-controlled endpoint.
+            @android.webkit.JavascriptInterface
+            public void onBridgeExfil(String data) {
+                android.util.Log.d("Gu3ssWeak_XSS02_EXFIL", "Exfiltrated: " + data);
+                if (data != null && data.contains("UID=")) {
+                    FlagManager.capture(XssLabActivity.this, FlagManager.FLAG_XSS_02);
+                }
+            }
         }, "XssCheck");
+
+        // VULN-XSS-02: The same privileged bridge used in WebViewActivity is
+        // ALSO attached here. Any JS that reaches this page — including JS
+        // smuggled in via the XSS-01 filter bypass — can now call
+        // VulnBridge.getUid() / stealToken(), turning a client-side
+        // injection bug into a privileged-data-exposure bug.
+        webView.addJavascriptInterface(
+            new WebViewActivity.JavaScriptBridge(XssLabActivity.this), "VulnBridge");
 
         btnRender.setOnClickListener(v -> {
             String input = etInput.getText().toString();

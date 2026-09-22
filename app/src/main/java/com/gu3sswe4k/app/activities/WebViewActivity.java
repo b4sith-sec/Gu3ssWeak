@@ -73,25 +73,37 @@ public class WebViewActivity extends AppCompatActivity {
         return null;
     }
 
-    /** JavaScript bridge — exposes sensitive operations to any loaded page */
+    /** JavaScript bridge — exposes sensitive operations to any loaded page.
+     *  Reused across multiple screens (WebViewActivity, XssLabActivity),
+     *  which is exactly how bridge-exposure bugs spread in real apps:
+     *  a "shared utility" bridge gets attached wherever WebView is used,
+     *  including screens that also happen to have an injection bug. */
     public static class JavaScriptBridge {
-        private final WebViewActivity activity;
+        private final android.content.Context context;
 
-        JavaScriptBridge(WebViewActivity activity) {
-            this.activity = activity;
+        public JavaScriptBridge(android.content.Context context) {
+            this.context = context;
         }
 
         // VULN: Any JS on the loaded page can call this
         @android.webkit.JavascriptInterface
         public String stealToken() {
             android.content.SharedPreferences prefs =
-                activity.getSharedPreferences("user_prefs", android.content.Context.MODE_PRIVATE);
+                context.getSharedPreferences("user_prefs", android.content.Context.MODE_PRIVATE);
             return prefs.getString("auth_token", "no_token_found");
         }
 
         @android.webkit.JavascriptInterface
         public String getDeviceInfo() {
             return android.os.Build.MODEL + " | " + android.os.Build.VERSION.RELEASE;
+        }
+
+        // VULN-XSS-02: Exposes the app's process UID to any JS that can
+        // reach this bridge — including JS injected via a reflected XSS bug
+        // elsewhere in the app, not just JS the developer intended to run.
+        @android.webkit.JavascriptInterface
+        public int getUid() {
+            return android.os.Process.myUid();
         }
     }
 }

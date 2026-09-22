@@ -22,7 +22,7 @@ Launch the app, work through each lab, capture flags, and submit them on the in-
 | WebView | WV-01 to WV-05 | 5 |
 | Deeplink | DL-01 to DL-04, DL-CHAIN | 5 |
 | Auth / SQL Injection | SQL-01 | 1 |
-| Admin Panel | AP-01 to AP-03 | (covered by AP-01) |
+| Admin Panel | AP-01 to AP-04 | (covered by AP-01) |
 | Broadcast Receiver | BR-01 to BR-03 | 2 |
 | Service | SV-01, SV-02a, SV-02b | 2 |
 | Network Interception | NET-01 | 1 |
