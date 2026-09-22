@@ -4,7 +4,7 @@ This document explains how each vulnerable component in Gu3ssWeak works internal
 
 ## App Structure
 
-com.vulndroid.app/
+com.gu3sswe4k.app/
 - activities/MainActivity - Hub, links to all labs
 - activities/WebViewActivity - WV-01 to WV-05
 - activities/DeeplinkActivity - DL-01 to DL-04, DL-CHAIN
