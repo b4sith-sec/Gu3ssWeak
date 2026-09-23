@@ -33,6 +33,9 @@ public class LabRepository {
         // ContentProvider
         labs.add(new LabItem("CP-01", "Contact grant SQL injection (CVE-2026-28576 pattern)", "ContentProvider", CRITICAL, ContactPickerActivity.class));
 
+        // API / BOLA
+        labs.add(new LabItem("BOLA-01", "Broken object level authorization via user id", "API / Authorization", CRITICAL, BolaLabActivity.class));
+
         // Broadcast Receiver
         labs.add(new LabItem("BR-01/02", "Token injection via broadcast", "Broadcast Receiver", MEDIUM, null));
         labs.add(new LabItem("BR-03", "Sensitive data in logcat", "Broadcast Receiver", MEDIUM, LogcatLeakActivity.class));

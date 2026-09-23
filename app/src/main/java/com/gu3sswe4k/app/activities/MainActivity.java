@@ -46,6 +46,9 @@ public class MainActivity extends AppCompatActivity {
         // Contact grant SQL injection
         findViewById(R.id.btn_contact_provider).setOnClickListener(v -> startActivity(new Intent(this, ContactPickerActivity.class)));
 
+        // Broken object level authorization
+        findViewById(R.id.btn_bola).setOnClickListener(v -> startActivity(new Intent(this, BolaLabActivity.class)));
+
         // Broadcast
         findViewById(R.id.btn_broadcast).setOnClickListener(v -> {
             Intent b = new Intent("com.gu3sswe4k.app.SEND_TOKEN");
