@@ -1,162 +1,121 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#000000">
-    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
-        android:orientation="vertical" android:padding="16dp">
+    android:orientation="vertical"
+    android:background="#F5F5F5">
 
-        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-            android:text="Gu3ssWeak" android:textSize="32sp" android:textStyle="bold"
-            android:textColor="#FFFFFF" android:layout_gravity="center"
-            android:paddingTop="24dp"/>
-        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-            android:text="Vulnerable Android Lab" android:textSize="13sp"
-            android:textColor="#FFFFFF" android:layout_gravity="center" android:layout_marginTop="4dp"/>
-        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-            android:text="19 Vulnerabilities · OWASP Mobile Top 10"
-            android:textSize="11sp" android:textColor="#FFFFFF"
-            android:layout_gravity="center" android:layout_marginTop="4dp" android:layout_marginBottom="16dp"/>
+    <!-- Header -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="#FFFFFF"
+        android:padding="20dp"
+        android:elevation="2dp">
 
-        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
-            android:text="For authorized security research only"
-            android:background="#111111" android:textColor="#FFFFFF"
-            android:textSize="11sp" android:gravity="center"
-            android:padding="10dp" android:layout_marginBottom="20dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Gu3ssWeak"
+            android:textColor="#111111"
+            android:textSize="26sp"
+            android:textStyle="bold"/>
 
-        <!-- WEBVIEW -->
-        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-            android:text="WEBVIEW LABS" android:textSize="11sp"
-            android:textColor="#FFFFFF" android:letterSpacing="0.1" android:layout_marginBottom="8dp"/>
-        <Button android:id="@+id/btn_webview" android:layout_width="match_parent"
-            android:layout_height="52dp" android:text="WV-01 · JS Enabled No Origin Check"
-            android:backgroundTint="#111111" android:textColor="#FFFFFF" android:textSize="12sp" android:layout_marginBottom="6dp"/>
-        <Button android:id="@+id/btn_webview2" android:layout_width="match_parent"
-            android:layout_height="52dp" android:text="WV-02 · JavascriptInterface Bridge"
-            android:backgroundTint="#111111" android:textColor="#FFFFFF" android:textSize="12sp" android:layout_marginBottom="6dp"/>
-        <Button android:id="@+id/btn_webview3" android:layout_width="match_parent"
-            android:layout_height="52dp" android:text="WV-03 · Local File Read via file://"
-            android:backgroundTint="#111111" android:textColor="#FFFFFF" android:textSize="12sp" android:layout_marginBottom="6dp"/>
-        <Button android:id="@+id/btn_webview4" android:layout_width="match_parent"
-            android:layout_height="52dp" android:text="WV-04 · Arbitrary URL From Intent"
-            android:backgroundTint="#111111" android:textColor="#FFFFFF" android:textSize="12sp" android:layout_marginBottom="16dp"/>
+        <TextView
+            android:id="@+id/tv_lab_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="22 vulnerabilities · OWASP Mobile Top 10"
+            android:textColor="#888888"
+            android:textSize="13sp"
+            android:layout_marginTop="4dp"/>
 
-        <!-- DEEPLINK -->
-        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-            android:text="DEEPLINK LABS" android:textSize="11sp"
-            android:textColor="#FFFFFF" android:letterSpacing="0.1" android:layout_marginBottom="8dp"/>
-        <Button android:id="@+id/btn_deeplink" android:layout_width="match_parent"
-            android:layout_height="52dp" android:text="DL-01/02 · Deeplink Hijack"
-            android:backgroundTint="#111111" android:textColor="#FFFFFF" android:textSize="12sp" android:layout_marginBottom="6dp"/>
-        <Button android:id="@+id/btn_deeplink2" android:layout_width="match_parent"
-            android:layout_height="52dp" android:text="DL-03 · Token Overwrite via Deeplink"
-            android:backgroundTint="#111111" android:textColor="#FFFFFF" android:textSize="12sp" android:layout_marginBottom="6dp"/>
-        <Button android:id="@+id/btn_deeplink_chain" android:layout_width="match_parent"
-            android:layout_height="52dp" android:text="DL-CHAIN · Deeplink to WebView RCE"
-            android:backgroundTint="#111111" android:textColor="#FFFFFF" android:textSize="12sp" android:layout_marginBottom="16dp"/>
+        <EditText
+            android:id="@+id/et_search"
+            android:layout_width="match_parent"
+            android:layout_height="46dp"
+            android:layout_marginTop="14dp"
+            android:hint="Search labs..."
+            android:textColorHint="#999999"
+            android:textColor="#111111"
+            android:textSize="14sp"
+            android:background="#F0F0F0"
+            android:paddingHorizontal="16dp"
+            android:singleLine="true"
+            android:inputType="text"/>
 
-        <!-- AUTH / SQL -->
-        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-            android:text="AUTH / SQL INJECTION LABS" android:textSize="11sp"
-            android:textColor="#FFFFFF" android:letterSpacing="0.1" android:layout_marginBottom="8dp"/>
-        <Button android:id="@+id/btn_login" android:layout_width="match_parent"
-            android:layout_height="52dp" android:text="SQL-01 · Login SQL Injection Bypass"
-            android:backgroundTint="#FFFFFF" android:textColor="#000000" android:textSize="12sp" android:layout_marginBottom="6dp"/>
-        <Button android:id="@+id/btn_admin" android:layout_width="match_parent"
-            android:layout_height="52dp" android:text="AP-01/02/03 · Admin Panel Direct Access"
-            android:backgroundTint="#111111" android:textColor="#FFFFFF" android:textSize="12sp" android:layout_marginBottom="16dp"/>
-
-        <!-- CONTENTPROVIDER -->
-        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-            android:text="CONTENTPROVIDER LABS" android:textSize="11sp"
-            android:textColor="#FFFFFF" android:letterSpacing="0.1" android:layout_marginBottom="8dp"/>
-        <Button android:id="@+id/btn_contact_provider" android:layout_width="match_parent"
-            android:layout_height="52dp" android:text="CP-01 · Contact Grant SQL Injection"
-            android:backgroundTint="#111111" android:textColor="#FFFFFF" android:textSize="12sp" android:layout_marginBottom="16dp"/>
-
-        <!-- API / AUTHORIZATION -->
-        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-            android:text="API / AUTHORIZATION LABS" android:textSize="11sp"
-            android:textColor="#FFFFFF" android:letterSpacing="0.1" android:layout_marginBottom="8dp"/>
-        <Button android:id="@+id/btn_bola" android:layout_width="match_parent"
-            android:layout_height="52dp" android:text="BOLA-01 · Broken Object Level Authorization"
-            android:backgroundTint="#111111" android:textColor="#FFFFFF" android:textSize="12sp" android:layout_marginBottom="16dp"/>
-
-        <!-- BROADCAST -->
-        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-            android:text="BROADCAST RECEIVER LABS" android:textSize="11sp"
-            android:textColor="#FFFFFF" android:letterSpacing="0.1" android:layout_marginBottom="8dp"/>
-        <Button android:id="@+id/btn_broadcast" android:layout_width="match_parent"
-            android:layout_height="52dp" android:text="BR-01/02 · Token Injection via Broadcast"
-            android:backgroundTint="#111111" android:textColor="#FFFFFF" android:textSize="12sp" android:layout_marginBottom="6dp"/>
-        <Button android:id="@+id/btn_broadcast2" android:layout_width="match_parent"
-            android:layout_height="52dp" android:text="BR-03 · Sensitive Data in Logcat"
-            android:backgroundTint="#111111" android:textColor="#FFFFFF" android:textSize="12sp" android:layout_marginBottom="16dp"/>
-
-        <!-- SERVICE -->
-        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-            android:text="SERVICE LABS" android:textSize="11sp"
-            android:textColor="#FFFFFF" android:letterSpacing="0.1" android:layout_marginBottom="8dp"/>
-        <Button android:id="@+id/btn_service_wipe" android:layout_width="match_parent"
-            android:layout_height="52dp" android:text="SV-02a · Data Wipe via Service"
-            android:backgroundTint="#111111" android:textColor="#FFFFFF" android:textSize="12sp" android:layout_marginBottom="6dp"/>
-        <Button android:id="@+id/btn_service_exfil" android:layout_width="match_parent"
-            android:layout_height="52dp" android:text="SV-02b · Data Exfil SSRF via Service"
-            android:backgroundTint="#111111" android:textColor="#FFFFFF" android:textSize="12sp" android:layout_marginBottom="20dp"/>
-
-        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-            android:text="NETWORK INTERCEPTION LABS" android:textSize="11sp"
-            android:textColor="#FFFFFF" android:letterSpacing="0.1" android:layout_marginBottom="8dp"/>
-        <Button android:id="@+id/btn_network" android:layout_width="match_parent"
-            android:layout_height="52dp" android:text="NET-01 - Cleartext Traffic, No Cert Pinning"
-            android:backgroundTint="#111111" android:textColor="#FFFFFF" android:textSize="12sp" android:layout_marginBottom="20dp"/>
-
-        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-            android:text="BANKING / OTP LABS" android:textSize="11sp"
-            android:textColor="#FFFFFF" android:letterSpacing="0.1" android:layout_marginBottom="8dp"/>
-        <Button android:id="@+id/btn_otp" android:layout_width="match_parent"
-            android:layout_height="52dp" android:text="OTP-01 - OTP Brute Force, No Rate Limit"
-            android:backgroundTint="#111111" android:textColor="#FFFFFF" android:textSize="12sp" android:layout_marginBottom="20dp"/>
-
-        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-            android:text="LFI LABS" android:textSize="11sp"
-            android:textColor="#FFFFFF" android:letterSpacing="0.1" android:layout_marginBottom="8dp"/>
-        <Button android:id="@+id/btn_fileprovider" android:layout_width="match_parent"
-            android:layout_height="52dp" android:text="LFI-01 - Local File Inclusion via Path Traversal"
-            android:backgroundTint="#111111" android:textColor="#FFFFFF" android:textSize="12sp" android:layout_marginBottom="20dp"/>
-
-        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-            android:text="STORAGE LABS" android:textSize="11sp"
-            android:textColor="#FFFFFF" android:letterSpacing="0.1" android:layout_marginBottom="8dp"/>
-        <Button android:id="@+id/btn_storage" android:layout_width="match_parent"
-            android:layout_height="52dp" android:text="STORE-01 - Plaintext SharedPreferences"
-            android:backgroundTint="#111111" android:textColor="#FFFFFF" android:textSize="12sp" android:layout_marginBottom="20dp"/>
-
-        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-            android:text="XSS LABS" android:textSize="11sp"
-            android:textColor="#FFFFFF" android:letterSpacing="0.1" android:layout_marginBottom="8dp"/>
-        <Button android:id="@+id/btn_xss" android:layout_width="match_parent"
-            android:layout_height="52dp" android:text="XSS-01 - Reflected XSS, Filter Bypass"
-            android:backgroundTint="#111111" android:textColor="#FFFFFF" android:textSize="12sp" android:layout_marginBottom="20dp"/>
-
-        <!-- ADB -->
-        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-            android:text="ADB QUICK COMMANDS" android:textSize="11sp"
-            android:textColor="#FFFFFF" android:letterSpacing="0.1" android:layout_marginBottom="8dp"/>
-        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
-            android:text="$ adb shell am broadcast -a com.gu3sswe4k.app.SEND_TOKEN --es token FAKE&#10;$ adb shell am start -n com.gu3sswe4k.app/.activities.AdminPanelActivity&#10;$ adb logcat | grep Gu3ssWeak_FLAG"
-            android:background="#111111" android:textColor="#FFFFFF"
-            android:fontFamily="monospace" android:textSize="10sp"
-            android:padding="12dp" android:lineSpacingMultiplier="1.6"
-            android:layout_marginBottom="12dp"/>
-
-        <Button android:id="@+id/btn_submit_flag" android:layout_width="match_parent"
-            android:layout_height="52dp" android:text="Submit Flag"
-            android:backgroundTint="#FFFFFF" android:textColor="#000000"
-            android:textSize="14sp" android:layout_marginBottom="8dp"/>
-        <Button android:id="@+id/btn_scoreboard" android:layout_width="match_parent"
-            android:layout_height="52dp" android:text="CTF Scoreboard"
-            android:backgroundTint="#111111" android:textColor="#FFFFFF"
-            android:textSize="14sp" android:layout_marginBottom="32dp"/>
     </LinearLayout>
-</ScrollView>
+
+    <!-- Category filter chips -->
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#FFFFFF"
+        android:scrollbars="none"
+        android:paddingVertical="10dp">
+
+        <com.google.android.material.chip.ChipGroup
+            android:id="@+id/chip_group_categories"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="12dp"
+            app:singleSelection="true"
+            app:selectionRequired="false">
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip_all"
+                style="@style/Widget.MaterialComponents.Chip.Choice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="All"
+                android:checked="true"/>
+
+        </com.google.android.material.chip.ChipGroup>
+
+    </HorizontalScrollView>
+
+    <!-- Lab list -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_labs"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"/>
+
+    <!-- Bottom actions -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="#FFFFFF"
+        android:padding="12dp"
+        android:elevation="4dp">
+
+        <Button
+            android:id="@+id/btn_submit_flag"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            android:layout_marginEnd="6dp"
+            android:text="Submit Flag"
+            android:backgroundTint="#111111"
+            android:textColor="#FFFFFF"
+            android:textSize="13sp"/>
+
+        <Button
+            android:id="@+id/btn_scoreboard"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            android:layout_marginStart="6dp"
+            android:text="Scoreboard"
+            android:backgroundTint="#EEEEEE"
+            android:textColor="#111111"
+            android:textSize="13sp"/>
+
+    </LinearLayout>
+
+</LinearLayout>

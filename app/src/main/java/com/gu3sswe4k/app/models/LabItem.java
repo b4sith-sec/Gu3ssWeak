@@ -22,12 +22,18 @@ public class LabItem {
     public final String category;    // e.g. "WebView"
     public final Severity severity;
     public final Class<?> targetActivity; // activity to launch, nullable
+    public final LabAction action;         // custom click behavior, nullable
 
     public LabItem(String id, String title, String category, Severity severity, Class<?> targetActivity) {
+        this(id, title, category, severity, targetActivity, null);
+    }
+
+    public LabItem(String id, String title, String category, Severity severity, Class<?> targetActivity, LabAction action) {
         this.id = id;
         this.title = title;
         this.category = category;
         this.severity = severity;
         this.targetActivity = targetActivity;
+        this.action = action;
     }
 }

